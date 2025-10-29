@@ -1,0 +1,12 @@
+[
+  {
+    "question": "Which planet is known as the Red Planet?",
+    "choices": ["Earth", "Mars", "Venus", "Jupiter"],
+    "answer": "Mars"
+  },
+  {
+    "question": "What is 5 + 7?",
+    "choices": ["10", "11", "12", "13"],
+    "answer": "12"
+  }
+]
