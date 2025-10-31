@@ -69,7 +69,7 @@ function checkAnswer(choice) {
 
   // Check win/lose
   if (enemyHP === 0) {
-    container.innerHTML = "<h2>🎉 You win!</h2>";
+    container.innerHTML = "<h2>🎉 GG!, Try losing for a surprise?</h2>";
     document.getElementById("win-sound").play();
     return;
   }
@@ -133,7 +133,7 @@ function startEnemyAI() {
         updateUI();
 
         if (playerHP === 0) {
-          document.getElementById("quiz-container").innerHTML = "<h2>💀 You lost...</h2>";
+          document.getElementById("quiz-container").innerHTML = "<h2>💀 git gut study more</h2>";
           document.getElementById("lose-sound").play();
         }
       }, 800); // delay for attack after warning
