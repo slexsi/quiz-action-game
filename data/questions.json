@@ -8,5 +8,45 @@
     "question": "What is 5 + 7?",
     "choices": ["10", "11", "12", "13"],
     "answer": "12"
+  },
+  {
+    "question": "What color do you get when you mix red and blue?",
+    "choices": ["Purple", "Green", "Orange", "Yellow"],
+    "answer": "Purple"
+  },
+  {
+    "question": "Which animal is known as the King of the Jungle?",
+    "choices": ["Lion", "Tiger", "Elephant", "Giraffe"],
+    "answer": "Lion"
+  },
+  {
+    "question": "What is the capital of France?",
+    "choices": ["Paris", "London", "Berlin", "Rome"],
+    "answer": "Paris"
+  },
+  {
+    "question": "What is 9 x 3?",
+    "choices": ["27", "29", "24", "30"],
+    "answer": "27"
+  },
+  {
+    "question": "Which gas do humans breathe in to survive?",
+    "choices": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "answer": "Oxygen"
+  },
+  {
+    "question": "Which planet is closest to the Sun?",
+    "choices": ["Mercury", "Venus", "Earth", "Mars"],
+    "answer": "Mercury"
+  },
+  {
+    "question": "What is 15 ÷ 3?",
+    "choices": ["3", "5", "6", "4"],
+    "answer": "5"
+  },
+  {
+    "question": "What is the largest mammal in the world?",
+    "choices": ["Blue Whale", "Elephant", "Giraffe", "Shark"],
+    "answer": "Blue Whale"
   }
 ]
