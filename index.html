@@ -8,10 +8,8 @@
 </head>
 <body>
   <div id="game-container">
-    <!-- Canvas for any future animations -->
     <canvas id="gameCanvas" width="800" height="600"></canvas>
 
-    <!-- Battlefield: player + enemy + HP bars -->
     <div id="battlefield">
       <div id="player">
         <img src="images/player.gif" alt="Player" class="char">
@@ -28,7 +26,6 @@
       </div>
     </div>
 
-    <!-- Status: Score and Power Bar -->
     <div id="status-bar">
       <p>Score: <span id="score">0</span></p>
       <div id="power-bar">
@@ -36,15 +33,15 @@
       </div>
     </div>
 
-    <!-- Quiz container: questions will appear here -->
     <div id="quiz-container"></div>
   </div>
 
-  <!-- JavaScript files -->
-  <script src="js/player.js"></script>
-  <script src="js/enemy.js"></script>
+  <!-- Audio files -->
+  <audio id="hit-sound" src="sounds/hit.mp3"></audio>
+  <audio id="win-sound" src="sounds/win.mp3"></audio>
+  <audio id="lose-sound" src="sounds/lose.mp3"></audio>
+
+  <!-- JS files -->
   <script src="js/quiz.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/game.js"></script>
 </body>
 </html>
