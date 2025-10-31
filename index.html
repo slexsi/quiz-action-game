@@ -9,6 +9,30 @@
 <body>
   <div id="game-container">
     <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <div id="battlefield">
+      <div id="player">
+        <img src="images/player.gif" alt="Player" class="char">
+        <div class="hp-bar">
+          <div class="hp-fill" id="player-hp"></div>
+        </div>
+      </div>
+
+      <div id="enemy">
+        <img src="images/enemy.gif" alt="Enemy" class="char">
+        <div class="hp-bar">
+          <div class="hp-fill" id="enemy-hp"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="status-bar">
+      <p>Score: <span id="score">0</span></p>
+      <div id="power-bar">
+        <div id="power-fill"></div>
+      </div>
+    </div>
+
     <div id="quiz-container"></div>
   </div>
 
