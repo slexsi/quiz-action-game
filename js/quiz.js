@@ -16,6 +16,8 @@ async function loadQuestions() {
     showQuestion();
   } catch (err) {
     console.error("Failed to load questions:", err);
+    const container = document.getElementById("quiz-container");
+    container.innerHTML = "<p style='color:red;'>Failed to load questions.json</p>";
   }
 }
 
@@ -24,7 +26,6 @@ function showQuestion() {
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
 
-  // Check if questions are finished
   if (currentQuestionIndex >= questions.length) {
     container.innerHTML = "<h2>🎉 All questions answered!</h2>";
     return;
@@ -35,7 +36,6 @@ function showQuestion() {
   questionEl.textContent = q.question;
   container.appendChild(questionEl);
 
-  // Create choice buttons
   q.choices.forEach((choice) => {
     const btn = document.createElement("button");
     btn.textContent = choice;
@@ -55,18 +55,17 @@ function checkAnswer(choice) {
     power = Math.min(power + 20, 100);
     enemyHP = Math.max(enemyHP - 20, 0);
     container.innerHTML = "<p style='color:lime;'>✅ Correct! You attack the enemy!</p>";
-    flashCharacter("enemy"); // visual feedback
+    attackAnimation("player", "enemy");
   } else {
     // ❌ Wrong answer
     playerHP = Math.max(playerHP - 20, 0);
     container.innerHTML = `<p style='color:red;'>❌ Wrong! The enemy strikes back!</p>`;
-    flashCharacter("player"); // visual feedback
+    attackAnimation("enemy", "player");
   }
 
-  // Update UI
   updateUI();
 
-  // Check win/lose conditions
+  // Check win/lose
   if (enemyHP === 0) {
     container.innerHTML = "<h2>🎉 You win!</h2>";
     return;
@@ -97,6 +96,23 @@ function flashCharacter(charId) {
   setTimeout(() => {
     char.style.opacity = 1;
   }, 150);
+}
+
+// ================= Attack Animation =================
+function attackAnimation(attackerId, targetId) {
+  const attacker = document.getElementById(attackerId);
+  const target = document.getElementById(targetId);
+
+  if (!attacker || !target) return;
+
+  // Move attacker forward slightly
+  attacker.style.transition = "0.2s";
+  attacker.style.transform = "translateX(20px)";
+
+  setTimeout(() => {
+    attacker.style.transform = "translateX(0)";
+    flashCharacter(targetId); // target flashes when hit
+  }, 200);
 }
 
 // ================= Initialize =================
