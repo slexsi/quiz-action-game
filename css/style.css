@@ -15,3 +15,18 @@ body {
 #quiz-container {
   margin-top: 20px;
 }
+
+#quiz-container button {
+  background: #444;
+  color: white;
+  border: none;
+  margin: 6px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#quiz-container button:hover {
+  background: #666;
+}
