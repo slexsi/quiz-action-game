@@ -7,10 +7,13 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div id="game-container">
-    <canvas id="gameCanvas" width="800" height="600"></canvas>
 
+  <div id="game-container">
+
+    <!-- Battlefield -->
     <div id="battlefield">
+      <div class="ground"></div>
+
       <div id="player">
         <img src="images/player.gif" alt="Player" class="char">
         <div class="hp-bar">
@@ -26,6 +29,7 @@
       </div>
     </div>
 
+    <!-- Status Bar -->
     <div id="status-bar">
       <p>Score: <span id="score">0</span></p>
       <div id="power-bar">
@@ -33,6 +37,7 @@
       </div>
     </div>
 
+    <!-- Quiz Container -->
     <div id="quiz-container"></div>
   </div>
 
@@ -41,7 +46,7 @@
   <audio id="win-sound" src="sounds/win.mp3"></audio>
   <audio id="lose-sound" src="sounds/lose.mp3"></audio>
 
-  <!-- JS files -->
+  <!-- JS -->
   <script src="js/quiz.js"></script>
 </body>
 </html>
