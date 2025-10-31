@@ -50,7 +50,6 @@ function checkAnswer(choice) {
   const container = document.getElementById("quiz-container");
 
   if (choice === correct) {
-    // ✅ Correct answer
     score += 10;
     power = Math.min(power + 20, 100);
     enemyHP = Math.max(enemyHP - 20, 0);
@@ -58,7 +57,6 @@ function checkAnswer(choice) {
     attackAnimation("player", "enemy");
     document.getElementById("hit-sound").play();
   } else {
-    // ❌ Wrong answer
     playerHP = Math.max(playerHP - 20, 0);
     container.innerHTML = `<p style='color:red;'>❌ Wrong! The enemy strikes back!</p>`;
     attackAnimation("enemy", "player");
@@ -69,12 +67,18 @@ function checkAnswer(choice) {
 
   // Check win/lose
   if (enemyHP === 0) {
-    container.innerHTML = "<h2>🎉 GG!, Try losing for a surprise?</h2>";
+    container.innerHTML = `
+      <h2 style="color:green;">🏆 Victory! The enemy is defeated!</h2>
+      <button onclick="location.reload()">Play Again</button>
+    `;
     document.getElementById("win-sound").play();
     return;
   }
   if (playerHP === 0) {
-    container.innerHTML = "<h2>💀 You lost...</h2>";
+    container.innerHTML = `
+      <h2 style="color:red;">💀 You lost...</h2>
+      <button onclick="location.reload()">Retry</button>
+    `;
     document.getElementById("lose-sound").play();
     return;
   }
@@ -106,7 +110,6 @@ function flashCharacter(charId) {
 function attackAnimation(attackerId, targetId) {
   const attacker = document.getElementById(attackerId);
   const target = document.getElementById(targetId);
-
   if (!attacker || !target) return;
 
   attacker.style.transition = "0.2s";
@@ -123,9 +126,8 @@ function startEnemyAI() {
   setInterval(() => {
     if (playerHP <= 0 || enemyHP <= 0) return;
 
-    // 50% chance to attack
     if (Math.random() < 0.5) {
-      warnEnemyAttack(); // visual warning
+      warnEnemyAttack();
       setTimeout(() => {
         playerHP = Math.max(playerHP - 15, 0);
         attackAnimation("enemy", "player");
@@ -133,12 +135,15 @@ function startEnemyAI() {
         updateUI();
 
         if (playerHP === 0) {
-          document.getElementById("quiz-container").innerHTML = "<h2>💀 git gut study more</h2>";
+          document.getElementById("quiz-container").innerHTML = `
+            <h2 style="color:red;">💀 You lost...</h2>
+            <button onclick="location.reload()">Retry</button>
+          `;
           document.getElementById("lose-sound").play();
         }
-      }, 800); // delay for attack after warning
+      }, 800);
     }
-  }, 4000 + Math.random() * 3000); // 4-7 seconds interval
+  }, 3000 + Math.random() * 2000); // 3-5 sec interval
 }
 
 // ================= Warning Effect =================
@@ -154,8 +159,23 @@ function warnEnemyAttack() {
   }, 500);
 }
 
-// ================= Initialize =================
+// ================= Background Music & Mute =================
 window.onload = function() {
   loadQuestions();
-  startEnemyAI(); // start enemy AI
+  startEnemyAI();
+
+  const bgm = document.getElementById("bgm");
+  bgm.volume = 0.3;
+
+  // Autoplay on first click if blocked
+  document.getElementById("game-container").addEventListener("click", () => {
+    bgm.play().catch(err => {});
+  }, { once: true });
+
+  // Mute button
+  const muteBtn = document.getElementById("mute-btn");
+  muteBtn.onclick = () => {
+    bgm.muted = !bgm.muted;
+    muteBtn.textContent = bgm.muted ? "🔇 Muted" : "🔊 Unmuted";
+  };
 };
