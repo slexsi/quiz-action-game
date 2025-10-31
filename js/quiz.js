@@ -68,7 +68,7 @@ function checkAnswer(choice) {
   // Check win/lose
   if (enemyHP === 0) {
     container.innerHTML = `
-      <h2 style="color:green;">🏆 Victory! The enemy is defeated!</h2>
+      <h2 style="color:green;">Damn GGs, check the losing screen mayb?</h2>
       <button onclick="location.reload()">Play Again</button>
     `;
     document.getElementById("win-sound").play();
@@ -76,7 +76,7 @@ function checkAnswer(choice) {
   }
   if (playerHP === 0) {
     container.innerHTML = `
-      <h2 style="color:red;">💀 You lost...</h2>
+      <h2 style="color:red;">L + NO SWEAT + GO STUDY!</h2>
       <button onclick="location.reload()">Retry</button>
     `;
     document.getElementById("lose-sound").play();
