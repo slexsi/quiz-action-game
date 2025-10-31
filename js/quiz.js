@@ -16,8 +16,8 @@ async function loadQuestions() {
     showQuestion();
   } catch (err) {
     console.error("Failed to load questions:", err);
-    const container = document.getElementById("quiz-container");
-    container.innerHTML = "<p style='color:red;'>Failed to load questions.json</p>";
+    document.getElementById("quiz-container").innerHTML =
+      "<p style='color:red;'>Failed to load questions.json</p>";
   }
 }
 
@@ -56,11 +56,13 @@ function checkAnswer(choice) {
     enemyHP = Math.max(enemyHP - 20, 0);
     container.innerHTML = "<p style='color:lime;'>✅ Correct! You attack the enemy!</p>";
     attackAnimation("player", "enemy");
+    document.getElementById("hit-sound").play();
   } else {
     // ❌ Wrong answer
     playerHP = Math.max(playerHP - 20, 0);
     container.innerHTML = `<p style='color:red;'>❌ Wrong! The enemy strikes back!</p>`;
     attackAnimation("enemy", "player");
+    document.getElementById("hit-sound").play();
   }
 
   updateUI();
@@ -68,10 +70,12 @@ function checkAnswer(choice) {
   // Check win/lose
   if (enemyHP === 0) {
     container.innerHTML = "<h2>🎉 You win!</h2>";
+    document.getElementById("win-sound").play();
     return;
   }
   if (playerHP === 0) {
     container.innerHTML = "<h2>💀 You lost...</h2>";
+    document.getElementById("lose-sound").play();
     return;
   }
 
@@ -105,13 +109,12 @@ function attackAnimation(attackerId, targetId) {
 
   if (!attacker || !target) return;
 
-  // Move attacker forward slightly
   attacker.style.transition = "0.2s";
   attacker.style.transform = "translateX(20px)";
 
   setTimeout(() => {
     attacker.style.transform = "translateX(0)";
-    flashCharacter(targetId); // target flashes when hit
+    flashCharacter(targetId);
   }, 200);
 }
 
