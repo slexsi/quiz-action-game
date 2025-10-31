@@ -118,5 +118,44 @@ function attackAnimation(attackerId, targetId) {
   }, 200);
 }
 
+// ================= Enemy AI =================
+function startEnemyAI() {
+  setInterval(() => {
+    if (playerHP <= 0 || enemyHP <= 0) return;
+
+    // 50% chance to attack
+    if (Math.random() < 0.5) {
+      warnEnemyAttack(); // visual warning
+      setTimeout(() => {
+        playerHP = Math.max(playerHP - 15, 0);
+        attackAnimation("enemy", "player");
+        document.getElementById("hit-sound").play();
+        updateUI();
+
+        if (playerHP === 0) {
+          document.getElementById("quiz-container").innerHTML = "<h2>💀 You lost...</h2>";
+          document.getElementById("lose-sound").play();
+        }
+      }, 800); // delay for attack after warning
+    }
+  }, 4000 + Math.random() * 3000); // 4-7 seconds interval
+}
+
+// ================= Warning Effect =================
+function warnEnemyAttack() {
+  const enemy = document.getElementById("enemy");
+  enemy.style.transition = "0.2s";
+  enemy.style.transform = "translateY(-10px)";
+  enemy.style.opacity = 0.6;
+
+  setTimeout(() => {
+    enemy.style.transform = "translateY(0)";
+    enemy.style.opacity = 1;
+  }, 500);
+}
+
 // ================= Initialize =================
-window.onload = loadQuestions;
+window.onload = function() {
+  loadQuestions();
+  startEnemyAI(); // start enemy AI
+};
