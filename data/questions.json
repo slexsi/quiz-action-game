@@ -1,52 +1,87 @@
 [
   {
-    "question": "Which planet is known as the Red Planet?",
-    "choices": ["Earth", "Mars", "Venus", "Jupiter"],
-    "answer": "Mars"
+    "question": "Which type of analysis provides decision support and makes use of the prediction so that the analysis’ result can be used?",
+    "choices": ["Descriptive analysis", "Diagnostic analysis", "Predictive analysis", "Prescriptive analysis"],
+    "answer": "Prescriptive analysis"
   },
   {
-    "question": "What is 5 + 7?",
-    "choices": ["10", "11", "12", "13"],
-    "answer": "12"
+    "question": "Which statistical method is used to determine if there exists a relationship between variables?",
+    "choices": ["A/B testing", "Correlation", "Regression", "Quantitative"],
+    "answer": "Correlation"
   },
   {
-    "question": "What color do you get when you mix red and blue?",
-    "choices": ["Purple", "Green", "Orange", "Yellow"],
-    "answer": "Purple"
+    "question": "Which of the following best describes the challenge of 'Variety' in Big Data?",
+    "choices": [
+      "Managing the enormous amount of data being generated",
+      "Handling different types and formats of data such as text, images, and databases",
+      "Processing data quickly in real time or near real time",
+      "Ensuring the data is accurate and trustworthy"
+    ],
+    "answer": "Handling different types and formats of data such as text, images, and databases"
   },
   {
-    "question": "Which animal is known as the King of the Jungle?",
-    "choices": ["Lion", "Tiger", "Elephant", "Giraffe"],
-    "answer": "Lion"
+    "question": "What is a major security threat to big data during data ingress (entry)?",
+    "choices": ["Ransomware", "Data leakage", "Malicious data injection", "Data encryption"],
+    "answer": "Malicious data injection"
   },
   {
-    "question": "What is the capital of France?",
-    "choices": ["Paris", "London", "Berlin", "Rome"],
-    "answer": "Paris"
+    "question": "What does the 'Velocity' characteristic of big data refer to?",
+    "choices": [
+      "The speed at which data is generated and processed in real time.",
+      "The volume of data collected over time.",
+      "The diversity of data types and resources.",
+      "The accuracy and reliability of data."
+    ],
+    "answer": "The speed at which data is generated and processed in real time."
   },
   {
-    "question": "What is 9 x 3?",
-    "choices": ["27", "29", "24", "30"],
-    "answer": "27"
+    "question": "What is one of the main challenges faced by Connectionist AI models?",
+    "choices": [
+      "They can only process structured data.",
+      "They require a lot of predefined rules to function.",
+      "They are prone to overfitting and generalization issues.",
+      "They cannot handle high-dimensional data."
+    ],
+    "answer": "They are prone to overfitting and generalization issues."
   },
   {
-    "question": "Which gas do humans breathe in to survive?",
-    "choices": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
-    "answer": "Oxygen"
+    "question": "Which of the following best describes the black box problem in connectionist AI?",
+    "choices": [
+      "AI models are entirely interpretable and transparent.",
+      "The internal workings of neural networks are complex and not easily understood by humans.",
+      "AI models cannot make predictions from data.",
+      "Simulation models are less interpretable than AI."
+    ],
+    "answer": "The internal workings of neural networks are complex and not easily understood by humans."
   },
   {
-    "question": "Which planet is closest to the Sun?",
-    "choices": ["Mercury", "Venus", "Earth", "Mars"],
-    "answer": "Mercury"
+    "question": "What is one future direction of connectionist AI research?",
+    "choices": [
+      "Reducing the interpretability of models",
+      "Limiting AI to single-modal tasks",
+      "Developing neuro-symbolic systems for reasoning and transparency",
+      "Eliminating on-device computation"
+    ],
+    "answer": "Developing neuro-symbolic systems for reasoning and transparency"
   },
   {
-    "question": "What is 15 ÷ 3?",
-    "choices": ["3", "5", "6", "4"],
-    "answer": "5"
+    "question": "Which of the following is a real-world example of Connectionist AI in medical imaging analysis?",
+    "choices": [
+      "Siri using speech recognition",
+      "Google Health detecting breast cancer from mammograms",
+      "Amazon recommending health books",
+      "Tesla’s Autopilot system"
+    ],
+    "answer": "Google Health detecting breast cancer from mammograms"
   },
   {
-    "question": "What is the largest mammal in the world?",
-    "choices": ["Blue Whale", "Elephant", "Giraffe", "Shark"],
-    "answer": "Blue Whale"
+    "question": "What is overfitting?",
+    "choices": [
+      "When the model performs well on unseen data",
+      "When the network forgets patterns",
+      "When the model memorizes training data and fails on new data",
+      "When data is not trained enough"
+    ],
+    "answer": "When the model memorizes training data and fails on new data"
   }
 ]
